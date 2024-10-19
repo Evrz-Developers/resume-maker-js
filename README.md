@@ -70,7 +70,11 @@ The JSON file contains structured data for the user, including:
 ## Conclusion
 This resume maker application provides a simple and effective way for users to create and print their resumes. With the ability to fetch data from a JSON file or use hardcoded data, it offers flexibility and ease of use. The application can be further enhanced by adding features such as user input forms, saving resumes, or integrating with backend services for data storage.
 
+
 NOTE FROM DEVELOPER:
+
+## Tweaks
+1. **Move the page breaks to different sections**: if you want to move the page breaks to different sections, you can do so by adding the class "page-break" to the section you want to move the page break to. or you can add your own classes or styles and add class "no-print" to the section you want to hide when printing. play around with it.
 
 There are plans to Convert the application into nextjs framework in future.
 
