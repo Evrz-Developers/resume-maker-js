@@ -48,6 +48,7 @@ const personalInfo = {
             ],
             "link": "https://john-doe-portfolio.com",
             "github": "https://github.com/johndoe/portfolio-website",
+            "github2": "https://github.com/johndoe/portfolio-website-backend",
             "duration": "(Nov 2022 - Dec 2022)"
         },
         {
@@ -125,9 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const experienceList = document.getElementById("experienceList");
     personalInfo.experience.forEach((exp, index) => {
         const li = document.createElement("li");
-        li.innerHTML = `<span class="subDetails">${exp.title} &nbsp;&nbsp;</span><span class="bold"></span>- ${exp.company}, ${exp.location} <br>${exp.duration}${index < personalInfo.experience.length - 1 ? '<br><br>' : ''}`;
-        experienceList.appendChild(li);
-    });
+            li.innerHTML = `<span class="subDetails">${exp.title} &nbsp;</span><span class="bold"></span>- ${exp.company}, ${exp.location} <br>${exp.duration}${index < personalInfo.experience.length - 1 ? '<br><br>' : ''}`;
+            experienceList.appendChild(li);
+        });
 
 
     // Populate projects section
@@ -139,24 +140,27 @@ document.addEventListener("DOMContentLoaded", function () {
             projectLink += `<a href="${project.link}" target="_blank">View Project</a> &nbsp;&nbsp;`;
         }
         if (project.github) {
-            projectLink += `<a href="${project.github}" target="_blank">Check GitHub</a>`;
-        }
-        let projectDetails = `<span class="subDetails">${project.title} &nbsp;&nbsp;</span><span class="bold"></span> - ${project.description} <br>`;
-        if (project.duration) {
-            projectDetails += `${project.duration} <br>`;
-        }
-        projectDetails += `${projectLink}${index < personalInfo.projects.length - 1 ? '<br><br>' : ''}`;
-        li.innerHTML = projectDetails;
-        projectsList.appendChild(li);
-    });
+                projectLink += `<a href="${project.github}" target="_blank">GitHub</a>`;
+            }
+            if (project.github2) {
+                projectLink += `<a href="${project.github2}" target="_blank">&nbsp;&nbsp; GitHub(Backend)</a>`;
+            }
+            let projectDetails = `<span class="subDetails">${project.title} &nbsp;</span><span class="bold"></span>- ${project.description} <br>`;
+            if (project.duration) {
+                projectDetails += `${project.duration} <br>`;
+            }
+            projectDetails += `${projectLink}${index < personalInfo.projects.length - 1 ? '<br><br>' : ''}`;
+            li.innerHTML = projectDetails;
+            projectsList.appendChild(li);
+        });
 
     // Populate education section
     const educationList = document.getElementById("educationList");
     personalInfo.education.forEach((edu, index) => {
         const li = document.createElement("li");
-        li.innerHTML = `<span class="subDetails">${edu.degree} &nbsp;&nbsp;</span><span class="bold"></span> - ${edu.institution} <br>${edu.duration}${index < personalInfo.education.length - 1 ? '<br><br>' : ''}`;
-        educationList.appendChild(li);
-    });
+            li.innerHTML = `<span class="subDetails">${edu.degree} &nbsp;</span><span class="bold"></span>- ${edu.institution} <br>${edu.duration}${index < personalInfo.education.length - 1 ? '<br><br>' : ''}`;
+            educationList.appendChild(li);
+        });
 
     // Populate interests section
     const interestsList = document.getElementById("interestsList");

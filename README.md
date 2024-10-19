@@ -76,6 +76,9 @@ NOTE FROM DEVELOPER:
 ## Tweaks
 1. **Move the page breaks to different sections**: if you want to move the page breaks to different sections, you can do so by adding the class "page-break" to the section you want to move the page break to. or you can add your own classes or styles and add class "no-print" to the section you want to hide when printing. play around with it.
 
+2. **Add multiple github links**: If you want to link one more github repo (as backend repo), you can do so by adding the github link to the project in the JSON file as 'github2'.
+
+
 There are plans to Convert the application into nextjs framework in future.
 
 
